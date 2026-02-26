@@ -1,6 +1,6 @@
 from socket import socket, AF_INET, SOCK_STREAM 
 
-severName = 'servername'
+severName = 'localhost'
 severPort = 12000
 
 clientSocket = socket(AF_INET, SOCK_STREAM)
