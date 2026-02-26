@@ -31,7 +31,7 @@ fn handle_connection(mut stream: TcpStream) {
 
     // Read file requested and handle potential 404
     let (status_line, contents) = match fs::read_to_string(&filename) {
-        Ok(body) => ("HTTP/1.1 200 OK", body),
+        Ok(body) => ("HTTP/1.1 200 OK", body), // status_line, contents get populated here
         Err(_) => ("HTTP/1.1 404 NOT FOUND", String::from("<h1>404 Not Found</h1>")),
     };
 
