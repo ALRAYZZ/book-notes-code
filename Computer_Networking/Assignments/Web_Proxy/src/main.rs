@@ -14,7 +14,8 @@ fn handle_client(mut client_stream: TcpStream) {
     // Read the request from the browser
     client_stream.read(&mut buffer).unwrap();
 
-    // Parse buffer to find destination host
+    // Parse buffer to find destination hosta (Become a client)
+    // Proxys act as server and client at the same time, they receive requests from clients and forward them to servers
     let mut server_stream = TcpStream::connect("93.184.216.34:80")
         .expect("Failed to connect to origin");
 
